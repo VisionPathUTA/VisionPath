@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const active=Math.round((vp/100)*vDots.length);
     vDots.forEach((dd,i)=>{ dd.className='vdot'; if(i<active) dd.classList.add('active-'+z.c); });
     if(stick){ stick.className='stick-icon'; if(z.c==='warning')stick.classList.add('vibrating'); if(z.c==='danger')stick.classList.add('vibrating-strong'); }
-    if(obs){ obs.style.left=(10+(pct/100)*50)+'%'; obs.style.filter=z.c==='danger'?'drop-shadow(0 0 14px rgba(239,68,68,.9))':z.c==='warning'?'drop-shadow(0 0 10px rgba(245,158,11,.7))':'drop-shadow(0 0 4px rgba(56,189,248,.2))'; }
+    if(obs){ obs.style.left=(10-(pct/100)*50)+'%'; obs.style.filter=z.c==='danger'?'drop-shadow(0 0 14px rgba(239,68,68,.9))':z.c==='warning'?'drop-shadow(0 0 10px rgba(245,158,11,.7))':'drop-shadow(0 0 4px rgba(56,189,248,.2))'; }
     if(distLine&&distLabel){
       const sc=document.querySelector('.simulation-scene');
       if(sc){ const W=sc.offsetWidth,sl=W*.12+50,ol=W-(W*(10+(pct/100)*50)/100)-20,lw=Math.max(0,ol-sl);
